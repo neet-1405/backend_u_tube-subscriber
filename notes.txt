@@ -1,0 +1,11 @@
+creating three api
+
+this Route show all the subscriber list with Details
+/subscribers
+
+This route provides an array of all subscribers with only two field their name and subscribers channel
+/subscribers/name
+
+
+This api provides the detail of an subscribers through an api
+/subscribers/:id
