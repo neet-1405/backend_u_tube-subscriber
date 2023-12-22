@@ -13,3 +13,10 @@
         }
     ]
 }
+{
+    "rewrites":[
+        {
+            "source":"/(.*)","destination":"/"
+        }
+    ]
+}
