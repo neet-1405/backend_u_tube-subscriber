@@ -4,7 +4,7 @@ const cors=require("cors")
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 
-const userss=require("./routes/users")
+const userss=require("./users.js")
 
 const app=express();
 

@@ -4,7 +4,7 @@ const routes = express.Router();
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require('mongoose');
-const Subscriber = require("../model/schema");
+const Subscriber = require("./model/schema");
 const { error } = require("console");
 const app=express();
 
@@ -41,7 +41,7 @@ routes.get("/subscribers", async (req, res) => {
 });
 
 
-routes.get("/html",(req,res)=>{
+routes.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,"index.html"))
 });
 
