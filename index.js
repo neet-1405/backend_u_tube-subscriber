@@ -3,6 +3,7 @@ const dotenv=require("dotenv").config();
 const cors=require("cors")
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
+const path = require("path");
 
 const userss=require("./src/users.js")
 
@@ -27,6 +28,19 @@ app.use(cors());
 // what evere data is coming in the body can not be redable body parser aloow it to be redable
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
+
+
+
+
+// app.get("/",(req,res)=>{
+//     res.send
+// })
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/index.html"))
+});
+// app.get("/",(req,res)=>{
+//     res.send("hello")
+// });
 
 
 

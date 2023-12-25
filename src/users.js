@@ -25,6 +25,10 @@ routes.use((req, res, next) => {
     next();
 });
 
+// routes.route("/users",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"/index.html"))
+// });
+
 
 routes.get("/subscribers", async (req, res) => {
     try {
@@ -42,9 +46,7 @@ routes.get("/subscribers", async (req, res) => {
 app.use(express.urlencoded({ extended:true}))
 app.use(express.json());
 
-routes.get("/users",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/index.html"))
-});
+
 
 
 
@@ -100,6 +102,7 @@ routes.get("/subscriberss/names",async (req,res)=>{
 routes.get('/dummyapi', (req, res) => {
     res.send("Dummy API is working");
 });
+
 
 
 module.exports = routes;
