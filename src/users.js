@@ -42,7 +42,7 @@ routes.get("/subscribers", async (req, res) => {
 app.use(express.urlencoded({ extended:true}))
 app.use(express.json());
 
-routes.get("/",(req,res)=>{
+routes.get("/users",(req,res)=>{
     res.sendFile(path.join(__dirname,"/index.html"))
 });
 
