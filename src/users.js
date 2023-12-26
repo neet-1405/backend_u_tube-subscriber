@@ -15,6 +15,10 @@ const app=express();
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
 
+routes.route("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/index.html"))
+});
+
 
 
 // Middleware to check MongoDB connection status
@@ -25,9 +29,7 @@ routes.use((req, res, next) => {
     next();
 });
 
-// routes.route("/users",(req,res)=>{
-//     res.sendFile(path.join(__dirname,"/index.html"))
-// });
+
 
 
 routes.get("/subscribers", async (req, res) => {
