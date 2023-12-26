@@ -15,9 +15,7 @@ const app=express();
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
 
-routes.route("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/index.html"))
-});
+
 
 
 
@@ -27,6 +25,10 @@ routes.use((req, res, next) => {
         return res.status(500).send("Internal server error: MongoDB not connected");
     }
     next();
+});
+
+routes.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/index.html"))
 });
 
 

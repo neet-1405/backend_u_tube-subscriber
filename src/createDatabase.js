@@ -27,4 +27,8 @@ const refreshAll = async () => {
 }
 refreshAll();
 
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/index.html"))
+});
+
 app.use("/users",userss)
