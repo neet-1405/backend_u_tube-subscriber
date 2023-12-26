@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const path = require("path");
 
-const userss=require("./src/users.js")
+const users=require("./src/users.js")
 
 const app=express();
 
@@ -40,4 +40,4 @@ app.get("/",(req,res)=>{
 
 
 
-app.use("/users",userss)
+app.use("/users",users)
