@@ -6,7 +6,8 @@ const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const path = require("path");
 
-const users=require("./src/users.js")
+// const users=require("./src/users.js")
+const users=require("../subscriberbackend/src/users")
 
 const app=express();
 
@@ -39,9 +40,9 @@ app.use(bodyParser.json());
 //     res.sendFile(path.join(__dirname,"/index.html"))
 // });
 
-// app.get("/",(req,res)=>{
-//     res.sendFile(path.join(__dirname, "/index.html"))
-// });
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname, "/index.html"))
+});
 
 
 app.use('/', require('./src/users'));
