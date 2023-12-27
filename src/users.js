@@ -16,7 +16,9 @@ app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
 
 
-
+routes.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"))
+});
 
 
 // Middleware to check MongoDB connection status
@@ -26,12 +28,6 @@ routes.use((req, res, next) => {
     }
     next();
 });
-
-routes.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/index.html"))
-});
-
-
 
 
 routes.get("/subscribers", async (req, res) => {
@@ -44,6 +40,10 @@ routes.get("/subscribers", async (req, res) => {
         res.status(500).send("Internal server error");
     }
 });
+
+
+
+
 
 
 

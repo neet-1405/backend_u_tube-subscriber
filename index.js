@@ -1,6 +1,7 @@
 const express=require("express");
 const dotenv=require("dotenv").config();
 const cors=require("cors")
+
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const path = require("path");
@@ -12,7 +13,6 @@ const app=express();
 // routing file
 // own module for routes custom import
 
-app.use("/users",users)
 
 const mongodbURI=process.env.MONGOOSE_URI;
 const port=process.env.port||8080;
@@ -39,7 +39,9 @@ app.use(bodyParser.json());
 //     res.sendFile(path.join(__dirname,"/index.html"))
 // });
 
+// app.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname, "/index.html"))
+// });
+app.use('/', require('./src/users'));
 
-
-
-// app.use("/users",users)
+app.use("/users",users)

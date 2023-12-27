@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const subscriberModel = require('./model/schema')
 const data = require('./src/data')
 const dotenv = require("dotenv").config();
-const userss=require("./src/users.js")
+
 
 
 const mongodbURI=process.env.MONGOOSE_URI;
@@ -27,8 +27,3 @@ const refreshAll = async () => {
 }
 refreshAll();
 
-app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/index.html"))
-});
-
-app.use("/users",userss)
