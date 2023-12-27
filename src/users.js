@@ -10,6 +10,7 @@ const app=express();
 
 
 
+
 // any platform can access my api
 // what evere data is coming in the body can not be redable body parser aloow it to be redable
 app.use(bodyParser.urlencoded({ extended:true}))
