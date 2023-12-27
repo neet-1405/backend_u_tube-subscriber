@@ -45,7 +45,7 @@ app.get("/",(req,res)=>{
 });
 
 
-app.use('/', require('./src/users'));
+// app.use('/', require('./src/users'));
 
 
 
