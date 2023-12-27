@@ -12,6 +12,8 @@ const app=express();
 // routing file
 // own module for routes custom import
 
+app.use("/users",users)
+
 const mongodbURI=process.env.MONGOOSE_URI;
 const port=process.env.port||8080;
 const server=app.listen(port,()=>{
@@ -40,4 +42,4 @@ app.use(bodyParser.json());
 
 
 
-app.use("/users",users)
+// app.use("/users",users)
