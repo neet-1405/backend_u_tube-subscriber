@@ -1,6 +1,6 @@
 
 const express = require("express");
-const routes = express.Router();
+const routes = express.Router();    
 const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require('mongoose');
@@ -17,9 +17,20 @@ app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
 
 
-// routes.get("/",(req,res)=>{
-//     res.sendFile(path.join(__dirname,"index.html"))
+
+
+
+// routes.use((req,ees,next)=>{
+//     if(mongoose.connection.readystate!==1){
+//         return res.status(500).send("Internal server error mongodb not connected")
+//     }
+//     next();
 // });
+
+
+routes.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"../index.html"))
+});
 
 
 // Middleware to check MongoDB connection status
@@ -29,6 +40,8 @@ routes.use((req, res, next) => {
     }
     next();
 });
+
+
 
 
 routes.get("/subscribers", async (req, res) => {

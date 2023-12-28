@@ -5,10 +5,10 @@ const cors=require("cors")
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const path = require("path");
-
+// const users=require("./src/users")
 // const users=require("./src/users.js")
+// const users=require("../subscriberbackend/src/users")
 const users=require("../subscriberbackend/src/users")
-
 const app=express();
 
 // routing file
@@ -28,6 +28,7 @@ mongoose.connect(mongodbURI)
 
 // any platform can access my api
 app.use(cors());
+app.use(express.json())
 // what evere data is coming in the body can not be redable body parser aloow it to be redable
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json());
@@ -45,9 +46,10 @@ app.use(bodyParser.json());
 // });
 
 
-// app.use('/', require('./src/users'));
+app.use('/', require('./src/users'));
 
 // app.use('/subscribers', require('./src/users'));
 
 
+// app.use("/users",users)
 app.use("/users",users)
