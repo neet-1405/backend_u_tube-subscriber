@@ -41,9 +41,9 @@ app.use(bodyParser.json());
 //     res.sendFile(path.join(__dirname,"/index.html"))
 // });
 
-// app.get("/",(req,res)=>{
-//     res.sendFile(path.join(__dirname, "/index.html"))
-// });
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname, "/index.html"))
+});
 
 
 app.use('/', require('./src/users'));
