@@ -45,9 +45,9 @@ app.use(bodyParser.json());
 // });
 
 
-app.use('/', require('./src/users'));
+// app.use('/', require('./src/users'));
 
-app.use('/subscribers', require('./src/users'));
+// app.use('/subscribers', require('./src/users'));
 
 
 app.use("/users",users)
