@@ -5,15 +5,12 @@ const cors=require("cors")
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const path = require("path");
-// const users=require("./src/users")
-// const users=require("./src/users.js")
-// const users=require("../subscriberbackend/src/users")
+
 const users=require("../subscriberbackend/src/users")
 const app=express();
 
 // routing file
 // own module for routes custom import
-
 
 const mongodbURI=process.env.MONGOOSE_URI;
 const port=process.env.port||8080;
@@ -41,15 +38,9 @@ app.use(bodyParser.json());
 //     res.sendFile(path.join(__dirname,"/index.html"))
 // });
 
-app.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname, "/index.html"))
-});
+// app.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname, "/index.html"))
+// });
 
 
-app.use('/', require('./src/users'));
-
-// app.use('/subscribers', require('./src/users'));
-
-
-// app.use("/users",users)
 app.use("/users",users)

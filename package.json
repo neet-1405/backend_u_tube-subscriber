@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index",
     "server": "nodemon index",
-    "build": "netlify deploy --prod"
+    
   },
   "keywords": [],
   "author": "",
