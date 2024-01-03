@@ -28,9 +28,9 @@ app.use(bodyParser.json());
 // });
 
 
-routes.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"../index.html"))
-});
+// routes.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"../index.html"))
+// });
 
 
 // Middleware to check MongoDB connection status
